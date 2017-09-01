@@ -1,0 +1,44 @@
+<!--pages/mine/mine.wxml-->
+<view class="container">
+  <view class="card">
+    <view class="half_box">
+      <text class="title">
+        人数上限
+      </text>
+      <text class="number">
+        {{limitNum}}
+      </text>
+    </view>
+
+    <view class="half_box">
+      <text class="title">
+        已报名
+      </text>
+      <text class="number">
+        {{participantNum}}
+      </text>
+    </view>
+  </view>
+
+  <view class="info_box">
+    <view class="info_item">
+        <view class="sub_title">
+          报名人
+        </view>
+        <view class="sub_title">
+          报名人数
+        </view>
+    </view>
+
+    <view class="info_item" wx:for="{{participantList}}">
+      <view class="left_name">
+        {{item.name}}
+      </view>
+
+      <view class="right_num">
+        {{item.participantNum}}
+      </view>
+    </view>
+  </view>
+</view>
+

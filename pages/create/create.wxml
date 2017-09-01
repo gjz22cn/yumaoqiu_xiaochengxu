@@ -1,0 +1,102 @@
+
+  <!-- 比赛信息表单 -->
+  <view class="sim-form">
+    <view class="sim-form-group">
+        <label style="width:400rpx; display:block">请完善比赛信息</label>
+        
+    </view>
+
+    <view class="sim-form-group">
+      <label>项目类型:</label>
+      <picker bindchange="bindPickerChange" value="{{matchIndex}}" range="{{matchArr}}" bindchange="matchChange">
+        <view class="picker">
+          {{matchArr[matchIndex]}}<text class="sim-arrow-bottom"></text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="sim-form-group" wx:if="{{matchIndex==5}}">
+      <label style="margin-bottom:10rpx;">比赛项目:</label>
+       <checkbox-group bindchange="chooseTeamType">
+        <label class="checkbox" wx:for="{{teamType}}">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+        </label>
+      </checkbox-group>
+    </view>
+
+   
+
+    <view class="sim-form-group">
+      <label>开始时间:</label>
+      <picker mode="date" value="{{startTime}}" bindchange="startTimeChange">
+        <view class="picker">
+          {{startTime}}<text class="sim-arrow-bottom"></text>
+        </view>
+      </picker>
+    </view>
+
+     <view class="sim-form-group">
+      <label>结束时间:</label>
+      <picker mode="date" value="{{endTime}}" bindchange="endTimeChange">
+        <view class="picker">
+          {{endTime}}<text class="sim-arrow-bottom"></text>
+        </view>
+      </picker>
+    </view>
+
+     <view class="sim-form-group">
+      <label>报名截止时间:</label>
+      <picker mode="date" value="{{deadTime}}" bindchange="deadTimeChange">
+        <view class="picker">
+          {{deadTime}}<text class="sim-arrow-bottom"></text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="sim-form-group">
+      <label>地点:</label>
+      <input placeholder="请输入地点" bindinput="inputAddress"/>
+    </view>
+
+    <view class="sim-form-group">
+      <label>人数上限:</label>
+      <input placeholder="请输入人数上限" bindinput="inputLimited"/>
+    </view>
+
+    <view class="sim-form-group">
+      <label style="width:200rpx; display:block">请上传海报图片</label>
+      <view bindtap="chooseImage">
+          <view class="image_show" wx:if="{{imageList.length>0}}">
+            <block wx:for="{{imageList}}" wx:for-item="image">
+              <image src="{{image}}"></image>
+            </block>
+          </view>
+          
+
+
+          <view class="image_border" wx:if="{{imageList.length==0}}">
+            <view class="image-plus-horizontal"></view>
+            <view class="image-plus-vertical"></view>
+          </view>
+         
+      </view>
+    </view>
+  </view>
+
+  
+  <label class="title_tips">创建人预留信息</label>
+  <view class="sim-form">
+    <view class="sim-form-group">
+      <label>称呼:</label>
+      <input placeholder="请输入您的称呼" bindinput="inputName" />
+    </view>
+
+    <view class="sim-form-group">
+      <label>联系电话:</label>
+      <input placeholder="请输入您的手机号码" bindinput="inputPhone" />
+    </view>
+  </view>
+
+  <view>
+    <button class="sim-btn sim-btn-info" bindtap="submitInfo">提交</button>
+  </view>
