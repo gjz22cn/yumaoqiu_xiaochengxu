@@ -1,0 +1,10 @@
+<!--pages/mine/mine.wxml-->
+  <view class="title">报名名单</view>
+<view class="container">
+  <view class="" wx:if="{{nameList.length==0}}">暂无报名人员</view>
+  <view wx:if="{{nameList.length>0}}" class="name_card" wx:for="{{nameList}}">
+    {{item.name}}
+  </view>
+
+</view>
+

@@ -5,6 +5,7 @@ Page({
 
   data: {
     updateId:0,
+    gameName:'',
     matchArr: ['男子单打', '女子单打', '男子双打', '女子双打', '男女混双', '团体', '社团活动'],
     matchIndex: 0,
     teamType: [
@@ -58,6 +59,7 @@ Page({
       }
       _this.setData({
         updateId: MatchId,
+        gameName: res.data.result.data.gameName,
         matchIndex: parseInt(res.data.result.data.gameType)-1,
         teamTypeChosen: res.data.result.data.teamType,
         startTime: res.data.result.data.beginTime,
@@ -89,6 +91,13 @@ Page({
 
   onShareAppMessage: function () {
 
+  },
+
+  //输入比赛名称
+  inputMatchName(e) {
+    this.setData({
+      gameName: e.detail.value
+    })
   },
 
   //修改比赛类型
@@ -171,6 +180,7 @@ Page({
   submitInfo() {
     const submitData = {
       'id': this.data.updateId,
+      'gameName': this.data.gameName,
       'gameType': parseInt(this.data.matchIndex) + 1,
       'teamType': this.data.teamTypeChosen.join(','),
       'beginTime': this.data.startTime,

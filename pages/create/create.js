@@ -4,6 +4,7 @@ var app = getApp();
 Page({
 
   data: {
+    gameName:'',
     matchArr:['男子单打', '女子单打', '男子双打', '女子双打', '男女混双', '团体', '社团活动'],
     matchIndex:0,
     teamType:[
@@ -44,6 +45,13 @@ Page({
 
   onShareAppMessage: function () {
   
+  },
+
+  //输入比赛名称
+  inputMatchName(e){
+    this.setData({
+      gameName: e.detail.value
+    })
   },
 
   //修改比赛类型
@@ -131,6 +139,7 @@ Page({
   //点击提交
   submitInfo(){
     const submitData = {
+      'gameName': this.data.gameName,
       'gameType': parseInt(this.data.matchIndex) + 1,
       'teamType': this.data.teamTypeChosen.join(','),
       'beginTime': this.data.startTime,
@@ -161,9 +170,19 @@ Page({
         }
         if (res.data.code == '000000') {
           //成功
-          wx.switchTab({
-            url: '../activity/activity',
-          })
+          if(_this.data.matchIndex==6){
+            //创建的是社团活动
+            wx.navigateTo({
+              url: '../myOrganization/myOrganization',
+            })
+          }
+          else{
+            //创建的非社团活动，跳转到首页
+            wx.switchTab({
+              url: '../activity/activity',
+            })
+          }
+         
         }
       }
       ).catch(e =>
@@ -190,9 +209,18 @@ Page({
           }
           if (res.statusCode == 200){
             //成功
-            wx.switchTab({
-              url: '../activity/activity',
-            })
+            if (_this.data.matchIndex == 6) {
+              //创建的是社团活动
+              wx.navigateTo({
+                url: '../myOrganization/myOrganization',
+              })
+            }
+            else {
+              //创建的非社团活动，跳转到首页
+              wx.switchTab({
+                url: '../activity/activity',
+              })
+            }
           }
         },
         fail: function (e) {

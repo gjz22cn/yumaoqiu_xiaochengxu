@@ -3,7 +3,7 @@
     您暂未创建社团活动
   </view>
   <view class="match_box" wx:for="{{matchList}}">
-    <text style="font-size:30rpx; color:#000000">{{item.gameType}}</text>
+    <text style="font-size:30rpx; color:#000000">{{item.gameName}}</text>
     <text>{{item.beginTime}}至{{item.endTime}}</text>
     <text>{{item.address}}</text>
     <view class="text_container">

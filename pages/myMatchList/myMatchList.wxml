@@ -3,7 +3,7 @@
     您暂未创建比赛
   </view>
   <view class="match_box" wx:for="{{matchList}}">
-    <text style="font-size:30rpx; color:#000000">{{item.gameType}}</text>
+    <text style="font-size:30rpx; color:#000000">{{item.gameName}}({{item.gameType}})</text>
     <text>{{item.beginTime}}至{{item.endTime}}</text>
     <text>{{item.address}}</text>
     <view class="text_container">
@@ -17,6 +17,7 @@
         <image class="icon" data-matchid="{{item.id}}" src="../../images/tab3/editicon.png" bindtap="gotoEdit"></image>
         <image class="icon" data-matchid="{{item.id}}" src="../../images/tab3/addicon.png" bindtap="gotoAdd"></image>
         <image class="icon" data-matchid="{{item.id}}" src="../../images/tab3/chakan.png" bindtap="gotoDetails"></image>
+        <image class="icon" data-matchid="{{item.id}}" src="../../images/tab3/user.png" bindtap="gotoBaoming"></image>
         <image class="icon" data-matchid="{{item.id}}" src="../../images/tab3/delete.png" bindtap="deleteMatch"></image>
     </view>
   </view>

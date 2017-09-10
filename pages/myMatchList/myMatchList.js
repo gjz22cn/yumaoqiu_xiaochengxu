@@ -9,11 +9,16 @@ Page({
   },
 
   onLoad: function (options) {
-    getMyMatch(this)
+    //getMyMatch(this)
   },
 
   onShow: function () {
-    
+    this.setData({
+      matchList:[],
+      bottomNum: 1,
+      hasToEnd: false
+    })
+    getMyMatch(this)
   },
 
   onPullDownRefresh: function () {
@@ -57,7 +62,15 @@ Page({
   gotoDetails(e){
     const matchId = e.currentTarget.dataset.matchid;
     wx.navigateTo({
-      url: '../matchDetails/matchDetails?matchid=' + matchId,
+      url: '../enroll/enroll?matchid=' + matchId,
+    })
+  },
+
+  //进入报名列表页面
+  gotoBaoming(e) {
+    const matchId = e.currentTarget.dataset.matchid;
+    wx.navigateTo({
+      url: '../participantList/participantList?matchid=' + matchId,
     })
   },
 

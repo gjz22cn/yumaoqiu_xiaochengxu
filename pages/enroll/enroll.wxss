@@ -1,3 +1,4 @@
+@import '../matchDetails/matchDetails.wxss';
 .container{
   align-items: stretch
 }

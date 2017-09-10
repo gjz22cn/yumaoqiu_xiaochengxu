@@ -24,7 +24,7 @@
       </view>
       <view class="text_area">
         <view class="line">
-          <text class="title">{{item.gameType}}</text>
+          <text class="title">{{item.gameName}}</text>
         </view>
 
         <view class="line">

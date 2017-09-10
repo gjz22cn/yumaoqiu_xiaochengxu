@@ -39,7 +39,8 @@ page{
 }
 
 .none_tips{
-   margin-top:100rpx;
+   padding-top:100rpx;
+  padding-bottom:60rpx;
   text-align: center; 
   font-family: '微软雅黑'
 }

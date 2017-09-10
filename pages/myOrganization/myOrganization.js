@@ -8,11 +8,16 @@ Page({
   },
 
   onLoad: function (options) {
-    getMyMatch(this)
+    //getMyMatch(this)
   },
 
   onShow: function () {
-    
+    this.setData({
+      matchList: [],
+      bottomNum: 1,
+      hasToEnd: false
+    })
+    getMyMatch(this)
   },
 
   onPullDownRefresh: function () {

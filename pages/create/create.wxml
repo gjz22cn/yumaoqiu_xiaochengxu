@@ -6,6 +6,11 @@
         
     </view>
 
+   <view class="sim-form-group">
+      <label>比赛名称:</label>
+      <input placeholder="请输入比赛名称" bindinput="inputMatchName" />
+    </view>
+
     <view class="sim-form-group">
       <label>项目类型:</label>
       <picker bindchange="bindPickerChange" value="{{matchIndex}}" range="{{matchArr}}" bindchange="matchChange">
@@ -81,6 +86,8 @@
          
       </view>
     </view>
+
+    <label class="title_tips" style="color:gray;">(海报图片大小限制为1MB)</label>
   </view>
 
   

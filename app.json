@@ -13,6 +13,7 @@
     "pages/addTeamInfo/addTeamInfo",
     "pages/editTeamInfo/editTeamInfo",
     "pages/myMatchList/myMatchList",
+    "pages/participantList/participantList",
 
     "pages/myOrganization/myOrganization",
     "pages/clubEnroll/clubEnroll",

@@ -1,0 +1,19 @@
+@import '../memberList/memberList.wxss';
+.title{
+  margin-top:100rpx;
+  margin-bottom:40rpx;
+  font-size:36rpx;
+  text-align: center;
+}
+.name_card{
+  background: #fff;
+  box-shadow: 10rpx 10rpx 10rpx rgb(200, 200, 200);
+  border-radius:15rpx;
+  padding: 20rpx;
+}
+
+.container{
+  padding:0;
+  flex-direction: row;
+  justify-content: space-around;
+}
