@@ -67,6 +67,7 @@
 .item_box{
   position: relative;
   background: #fff;
+  height:100%;
 }
 
 .member_num{

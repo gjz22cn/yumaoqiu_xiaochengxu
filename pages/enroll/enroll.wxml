@@ -1,6 +1,6 @@
 <view class="detail_box">
 <view class="">
-  <image class="paperwall" src="{{imageUrl}}"></image>
+  
 
   <view style="height:1px"></view>
 
@@ -9,7 +9,7 @@
      
       <view> 
         <image class="icon_area"  src="../../images/tab1/calender.png"></image>
-        比赛时间
+        时间
       </view>
       <text class="text-gray">{{matchTime}}</text>
     </view>
@@ -45,7 +45,17 @@
       </view>
       <text class="text-gray">{{phone}}</text>
     </view>
+
+    <view class="sim-list-item">
+      <view> 
+        <image class="icon_area"  src="../../images/tab1/phone.png"></image>
+        备注
+      </view>
+      <text class="text-gray">{{comment}}</text>
+    </view>
   </view>
+
+  <image class="paperwall" src="{{imageUrl}}"></image>
 
   <view>
     <button wx:if="{{progress=='报名中'}}" class="sim-btn sim-btn-info" bindtap="gotoInfoPage">我要报名</button>

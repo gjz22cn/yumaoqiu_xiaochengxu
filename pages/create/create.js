@@ -23,7 +23,8 @@ Page({
     imageList:[],
     imageUrl:'',
     ownerName: '',
-    phoneNumber: ''
+    phoneNumber: '',
+    comment:''
   },
 
   onLoad: function (options) {
@@ -136,6 +137,13 @@ Page({
     })
   },
 
+  //输入备注
+  inputComment(e) {
+    this.setData({
+      comment: e.detail.value
+    })
+  },
+
   //点击提交
   submitInfo(){
     const submitData = {
@@ -148,7 +156,8 @@ Page({
       'address': this.data.address,
       'limitNum': this.data.memberLimited,
       'creator': this.data.ownerName,
-      'creatorPhone': this.data.phoneNumber
+      'creatorPhone': this.data.phoneNumber,
+      'comment': this.data.comment
     }
     if (this.data.imageList.length==0){
       //没有上传图片

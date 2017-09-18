@@ -13,6 +13,7 @@ Page({
     memberNum: 0,
     ownerName:'',
     phone:'',
+    comment:'',
     matchId:0,
     progress:'',
     gameName:'',
@@ -35,8 +36,7 @@ Page({
         'id': that.data.matchId
       },
       'header': {
-        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
-        'Cookie': app.globalData.sessionId
+        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
       },
       'method': 'POST'
     }
@@ -53,6 +53,7 @@ Page({
         memberNum: res.data.result.data.limitNum,
         ownerName: res.data.result.data.creator,
         phone: res.data.result.data.creatorPhone,
+        comment:res.data.result.data.comment,
         gameName: res.data.result.data.gameName,
         progress: res.data.result.data.progress
       })
@@ -70,8 +71,7 @@ Page({
         gameId: _this.data.matchId
       },
       'header': {
-        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
-        'Cookie': app.globalData.sessionId
+        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
       },
       'method': 'POST'
     }
@@ -119,8 +119,7 @@ Page({
         gameId: _this.data.matchId
       },
       'header': {
-        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
-        'Cookie': app.globalData.sessionId
+        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
       },
       'method': 'POST'
     }
@@ -167,6 +166,7 @@ Page({
 
     return {
       title: shareTitle,
+      page:'/pages/enroll/enroll.wxml?matchid='+this.data.matchId,
       success: function (res) {
         // 转发成功
       },

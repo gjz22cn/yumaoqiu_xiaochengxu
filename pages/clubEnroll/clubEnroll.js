@@ -13,6 +13,7 @@ Page({
     memberNum: 0,
     ownerName: '',
     phone: '',
+    comment:'',
     sendMatchId: 0
   },
 
@@ -31,8 +32,7 @@ Page({
         'id': that.data.sendMatchId
       },
       'header': {
-        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
-        'Cookie': app.globalData.sessionId
+        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
       },
       'method': 'POST'
     }
@@ -48,7 +48,8 @@ Page({
         matchAddress: res.data.result.data.address,
         memberNum: res.data.result.data.limitNum,
         ownerName: res.data.result.data.creator,
-        phone: res.data.result.data.creatorPhone
+        phone: res.data.result.data.creatorPhone,
+        comment: res.data.result.data.creatorPhone
       })
     }
     ).catch(e =>
@@ -68,7 +69,7 @@ Page({
     }
     return {
       title: '这有一个羽毛球社团活动哦！',
-      path: './clubEnroll/clubEnroll?id=share',
+      path: '/pages/clubEnroll/clubEnroll?matchid=' + this.data.sendMatchId,
       success: function (res) {
         // 转发成功
       },

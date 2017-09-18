@@ -102,6 +102,11 @@
       <label>联系电话:</label>
       <input placeholder="请输入您的手机号码" bindinput="inputPhone" />
     </view>
+
+    <view class="sim-form-group">
+      <label>备注:</label>
+      <input placeholder="请输入备注" bindinput="inputComment" />
+    </view>
   </view>
 
   <view>
